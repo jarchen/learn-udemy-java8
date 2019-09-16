@@ -1,5 +1,7 @@
 package stream;
 
+import java.util.Collections;
+import java.util.EnumSet;
 import java.util.Set;
 import java.util.function.BiConsumer;
 import java.util.function.BinaryOperator;
@@ -13,26 +15,26 @@ import java.util.stream.Collector;
 public class CharacterToStringCollector implements Collector<Character, StringBuilder, String> {
     @Override
     public Supplier<StringBuilder> supplier() {
-        return null;
+        return StringBuilder::new;
     }
 
     @Override
     public BiConsumer<StringBuilder, Character> accumulator() {
-        return null;
+        return StringBuilder::append;
     }
 
     @Override
     public BinaryOperator<StringBuilder> combiner() {
-        return null;
+        return StringBuilder::append;
     }
 
     @Override
     public Function<StringBuilder, String> finisher() {
-        return null;
+        return StringBuilder::toString;
     }
 
     @Override
     public Set<Characteristics> characteristics() {
-        return null;
+        return Collections.unmodifiableSet(EnumSet.of(Characteristics.UNORDERED));
     }
 }

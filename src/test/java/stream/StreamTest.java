@@ -46,7 +46,7 @@ public class StreamTest {
     public void shouldReturnNumberOfUsersOlderThen25() {
         List<User> users = User.getUsersWithAge(18, 20, 21, 22, 23, 24, 25, 26);
         Integer count = Stream8.countUsersOlderThen25(users);
-        assertTrue(count == 1);
+        assertEquals(1, (int) count);
     }
 
     @Test
@@ -234,7 +234,7 @@ public class StreamTest {
 
     @Test
     public void shouldBeEmptyStream() {
-        Stream<Integer> numberStream = null; //create empty stream
+        Stream<Integer> numberStream = Stream.empty(); //create empty stream
         assertNotNull(numberStream);
     }
 
@@ -247,6 +247,7 @@ public class StreamTest {
     @Test
     public void shouldGenerate10RandomNumbers() {
         List<Integer> randomNumbers = Stream8.generate10RandomNumbers();
+        randomNumbers.forEach(System.out::println);
         assertEquals(10, randomNumbers.size());
     }
 
