@@ -1,8 +1,8 @@
 package dateandtime;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
+import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.temporal.TemporalAdjusters;
 
 public class DateTime8 {
 
@@ -20,6 +20,11 @@ public class DateTime8 {
     }
 
     public static LocalDate findNextFriday13th(LocalDate from) {
-        throw new NotImplementedException();
+        LocalDate friday = from.with(TemporalAdjusters.nextOrSame(DayOfWeek.FRIDAY));
+        while (friday.getDayOfMonth() != 13) {
+            friday = friday.with(TemporalAdjusters.next(DayOfWeek.FRIDAY));
+        }
+
+        return friday;
     }
 }
