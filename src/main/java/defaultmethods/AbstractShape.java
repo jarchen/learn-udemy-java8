@@ -1,9 +1,7 @@
 package defaultmethods;
 
 public class AbstractShape implements Shape {
-
     private int xPos = 0;
-
     private int yPos = 0;
 
     @Override
