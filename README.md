@@ -1,2 +1,2 @@
-# :book:Learning Project with Java 8 Labmda ans Stream
-- Java 8 Lambdas: Pragmatic Functional Programming (JSBN:9863474061 / JSBN-13:9789863474067)
+# Udemy Learning Project with Java 8 Labmda ans Stream
+- :computer:[Become at ease with Java 8](https://www.udemy.com/course/become-at-ease-with-java-8/)
